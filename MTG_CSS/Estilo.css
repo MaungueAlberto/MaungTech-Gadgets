@@ -1,0 +1,191 @@
+*{
+   margin: 0%;
+   padding: 0%;
+   box-sizing: border-box;
+   list-style: none;
+   /* font-family: ; */
+}
+
+body{
+   background-color: #0f0f1e; 
+   /* background-color: #0f0f1e;  */
+   color: white;
+   font-size: 16px;
+   overflow: hidden;  /*(Não permitir Scroll) haiden, esconder tudo que não aperece na inicial*/
+}
+
+header{
+    position: fixed;
+    top:0;
+    width: 90vw;
+    padding: 20px 50px;
+    display: flex; /*Deixa os itens lado a lado(default)*/
+    justify-content: space-between; /*dar um espaçamento entre os  */
+    align-items: center;
+    z-index: 9;
+    border: 2px solid red;
+}
+h1{
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#00f7ff;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.6); /*sombra*/
+}
+
+header div{
+    border: 2px solid rgb(25, 173, 111);
+}
+
+
+nav {
+    border: 2px solid gold;
+}
+
+header nav ul{         /*Elemeto da lista do menu*/
+    display: flex; /*lado alado*/
+    gap: 48px;  /*Distanciamento entre os itens do ul*/
+}
+
+header nav ul li{ 
+  cursor: pointer;         
+  position: relative;
+  padding: 0px 6px; 
+}
+
+header nav ul li::after{ /*O que fazer depois do item*/
+  content: ""; /*conteudo depois do item li*/
+  position: absolute;    /*Me ajuda a positonar */ 
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00f7ff;
+}
+
+header nav ul li:hover::after { 
+    width: 100%;        
+    transition: 0.7s ease;
+}
+
+/*Agora a parte principal*/
+
+main{
+    height: 100vh;
+    border: #00f7ff 2px solid;
+    position: relative;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1f1f3a 100%);
+    overflow: hidden;
+}
+
+main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
+    content:"";
+    position:absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(50px) ;
+    z-index: 1;
+    animation:pulsar 3s infinite alternate;
+}
+
+
+/*Amimacão do desfoque no centro*/
+@keyframes pulsar{
+    0%{                     /*Quando estiver na posição inicial, meio transparente. Escala 80% do tamanho original*/
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.5);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.0);
+    }
+}
+
+.MTGLista{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item{
+    position: absolute;
+    inset: 0; /*top 0, bottom 0, left rigth 0*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.item_activo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    opacity: 1;
+    border:chartreuse 2px solid;
+   
+}
+
+.produtoMGT{
+    /* width: 45%; */
+    height: 100%;
+    display: flex;
+    flex: 45%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    /* margin-top: 10%; */
+    border:rgb(184, 194, 174) 2px solid;
+}
+
+.produtoMGT img{
+    max-width: 85%;
+    max-width: 75%;
+    filter: drop-shadow(0  0 30px rgba(0, 247, 255, 0.2));
+    border:rgb(80, 33, 168) 2px solid;
+}
+
+.contentMGT{
+   /* width: 55%; */
+   padding-right: 80px;
+   display: flex;
+   flex: 55%;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   position: relative;
+   padding: 30px 5px;
+   z-index: 2;
+   border: chocolate 2px solid;
+}
+
+#MTG_lancamento{
+    font-size: 1rem;
+    text-transform: uppercase;
+    color:  #00f7ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 1;
+    border: rgb(12, 117, 82) 2px solid;
+}
+
+#MTG_name_Product{
+   font-size: 4.5rem;
+   font-family: "Orbitron", sans-serif;
+   line-height: 1.1;
+
+}
+
+#MTG_Description{
+    border: rgb(60, 141, 114) 2px solid;
+}
+
+Saiba Mais
+
