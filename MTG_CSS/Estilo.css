@@ -7,7 +7,7 @@
 }
 
 body{
-   background-color: #0f0f1e; 
+   background-color: #0f0f1e;
    /* background-color: #0f0f1e;  */
    color: white;
    font-size: 16px;
@@ -18,7 +18,7 @@ header{
     position: fixed;
     top:0;
     width: 90vw;
-    padding: 20px 50px;
+    padding: 5px 50px;
     display: flex; /*Deixa os itens lado a lado(default)*/
     justify-content: space-between; /*dar um espaçamento entre os  */
     align-items: center;
@@ -46,15 +46,15 @@ header nav ul{         /*Elemeto da lista do menu*/
     gap: 48px;  /*Distanciamento entre os itens do ul*/
 }
 
-header nav ul li{ 
-  cursor: pointer;         
+header nav ul li{
+  cursor: pointer;
   position: relative;
-  padding: 0px 6px; 
+  padding: 0px 6px;
 }
 
 header nav ul li::after{ /*O que fazer depois do item*/
   content: ""; /*conteudo depois do item li*/
-  position: absolute;    /*Me ajuda a positonar */ 
+  position: absolute;    /*Me ajuda a positonar */
   left: 0;
   bottom: 0;
   width: 0;
@@ -62,8 +62,8 @@ header nav ul li::after{ /*O que fazer depois do item*/
   background-color: #00f7ff;
 }
 
-header nav ul li:hover::after { 
-    width: 100%;        
+header nav ul li:hover::after {
+    width: 100%;
     transition: 0.7s ease;
 }
 
@@ -120,15 +120,25 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     justify-content: center;
     align-items: center;
     opacity: 0;
+
+
+    /*Animação*/
+    transform: translateX(100vw);
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+
+    border: thistle solid 2px;
 }
+
+
 
 .item_activo{
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 5%;
     opacity: 1;
+    transform: translateX(0);
     border:chartreuse 2px solid;
-   
+
 }
 
 .produtoMGT{
@@ -140,7 +150,9 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     align-items: center;
     position: relative;
     z-index: 1;
-    /* margin-top: 10%; */
+    margin-top: 5%;
+
+   
     border:rgb(184, 194, 174) 2px solid;
 }
 
@@ -148,7 +160,18 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     max-width: 85%;
     max-width: 75%;
     filter: drop-shadow(0  0 30px rgba(0, 247, 255, 0.2));
+    
+    /*Animaç]ao*/
+    transform:  translateX(400px); /*Aparece a 400px antes da posição padrão*/
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s; /*Demora 0.6segundos para */
+    transition-delay: 0.5s;
     border:rgb(80, 33, 168) 2px solid;
+}
+
+.item_activo .produtoMGT img{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .contentMGT{
@@ -162,6 +185,7 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
    position: relative;
    padding: 30px 5px;
    z-index: 2;
+
    border: chocolate 2px solid;
 }
 
@@ -173,6 +197,7 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     letter-spacing: 2px;
     margin-bottom: 10px;
     opacity: 1;
+
     border: rgb(12, 117, 82) 2px solid;
 }
 
@@ -180,12 +205,170 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
    font-size: 4.5rem;
    font-family: "Orbitron", sans-serif;
    line-height: 1.1;
+   margin-bottom: 20px;
 
+   border: rgb(148, 12, 107) 2px solid;
+}
+
+
+#MTG_name_Product{
+    transform:  translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s;
+    transition-delay: 0.5s;
+}
+
+.item_activo  #MTG_name_Product{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #MTG_Description{
+    color: #b8b8d0;
+    font-size: 1rem;
+    line-height:1.3;
+    margin-bottom: 30px;
+    max-width: 600px;
+
     border: rgb(60, 141, 114) 2px solid;
 }
 
-Saiba Mais
+.Saiba_mais{
+    padding: 12px 10px;
+    background: linear-gradient(90deg, #00f7ff, #0066ff);
+    border-radius: 30px;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    border:none;
+}
+
+.Saiba_mais{
+    padding: 10px 14px;
+    background: linear-gradient(90deg, #00f7ff, #0066ff);
+    border-radius: 30px;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    border:none;
+}
+.Saiba_mais:hover{
+    padding: 11px 15px;
+    transition: 0.1s ease;
+    color: rgb(20, 20, 20);
+}
+
+.setas{
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 4px white;
+    z-index: 5;
+}
+
+.setaBTN{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 247, 255, 0.33);
+}
+
+.setaBTN:hover{
+    background:rgb(0, 247, 255, 0.2) ;
+    border-color:#00f7ff ;
+}
+
+.Indicador{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    z-index: 5; 
+    border: #1717cf 2px solid;
+}
+
+
+
+.numberSituado{
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255, 0.2);
+}
+
+.pontoSituado{
+    display: flex;
+    gap: 7px;
+    /* max-width: 20%; */
+}
+
+
+
+
+.ponto{
+    width: 20px;
+    height: 4px;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.ponto_activo{
+    width: 20px;
+    height: 4px;
+    background-color:#00f7ff;
+    border-radius: 2px;
+}
+
+/*Circulos do fundo*/
+/* .contentMGT{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} */
+
+.circulos{
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    opacity: 0.3;
+    border-radius: 50%;
+}
+
+.circulos:nth-child(1){
+   width: 200px;
+   height: 200px;
+   top: 10%;
+   left: 10%;
+}
+.circulos:nth-child(2){
+   width: 270px;
+   height: 270px;
+   top: 60%;
+   left: 60%;
+}
+.circulos:nth-child(3){
+   width: 150px;
+   height: 150px;
+   top: 70%;
+   left: 20%;
+}
+.circulos:nth-child(4){
+   width: 110px;
+   height: 110px;
+   top: 20%;
+   left: 80%;
+}
+
 
