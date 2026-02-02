@@ -24,12 +24,12 @@ function Atualizar(direccao){
     if(direccao > 0){
 
         activo +=1;
-        console.log(activo)
+        // console.log(activo)
     
         if(activo == total) {
 
         activo = 0;
-        console.log(activo)
+        // console.log(activo)
 
     }
         } else if (direccao < 0){
