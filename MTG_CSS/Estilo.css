@@ -279,7 +279,7 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     align-items: center;
     gap: 2px;
     z-index: 5; 
-    padding: 0% ;
+    padding: 2% ;
     /* border: #1717cf 2px solid; */
 }
 
@@ -402,23 +402,6 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
         flex: 100%;
         /* border: chocolate 2px solid; */
      }
-
-/* 
-     .Indicador{    
-        /* border: thistle solid 2px; 
-        margin-bottom: 0%;
-        border:rgb(184, 194, 174) 2px solid; 
-    }
-
-    .pontoSituado{    
-        margin-TOP: 0%;
-        border:rgb(90, 26, 150) 2px solid; 
-    }
-
-    .numberSituado{    
-        margin-bottom: 0%;
-        border:rgb(60, 201, 102) 2px solid; 
-    } */
 
 
     
