@@ -271,14 +271,15 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
 
 .Indicador{
     position: absolute;
-    bottom: 5px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22px;
+    gap: 2px;
     z-index: 5; 
+    padding: 0% ;
     /* border: #1717cf 2px solid; */
 }
 
@@ -292,6 +293,7 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
     font-size: 2rem;
     font-weight: 800;
     color: rgb(255, 255, 255, 0.2);
+    
 }
 
 .pontoSituado{
@@ -401,10 +403,23 @@ main::before{       /*fUNDO DA IMAGEM COM UMA COLORAÇÃO !=*/
         /* border: chocolate 2px solid; */
      }
 
+/* 
      .Indicador{    
-        /* border: thistle solid 2px; */
-        margin-bottom: 15%;
+        /* border: thistle solid 2px; 
+        margin-bottom: 0%;
+        border:rgb(184, 194, 174) 2px solid; 
     }
+
+    .pontoSituado{    
+        margin-TOP: 0%;
+        border:rgb(90, 26, 150) 2px solid; 
+    }
+
+    .numberSituado{    
+        margin-bottom: 0%;
+        border:rgb(60, 201, 102) 2px solid; 
+    } */
+
 
     
     .setas{

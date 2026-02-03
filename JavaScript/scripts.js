@@ -1,3 +1,4 @@
+
 const btnPrev = document.getElementById("setaEsquerda");
 const btnNext  = document.getElementById("setaDireita");
 
